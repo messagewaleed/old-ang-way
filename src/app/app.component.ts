@@ -8,3 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'old-ang-way';
 }
+
+// ng new old-ang-way --no-standalone
+
+

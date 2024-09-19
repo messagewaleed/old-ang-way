@@ -1,0 +1,21 @@
+
+<div>
+    <h1>{{profile.name}}</h1>
+    <h2>{{profile.designation}}</h2>
+    <h3>{{profile.skills}}</h3>
+    <button *ngIf="!isVisible" (click)="toggleContact()">SHOW</button>
+    <button *ngIf="isVisible" (click)="toggleContact()">HIDE</button>
+<div *ngIf="isVisible">
+    <div *ngIf="profile.contact.length">
+        Contact:
+        <p *ngFor="let value of profile.contact">
+            {{value}}
+        </p>
+    </div>
+</div>
+</div>
+
+<!-- *ngFor - directive
+*ngFor = "let item of items" -->
+
+<!-- *ngIf -->
