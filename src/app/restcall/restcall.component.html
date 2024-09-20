@@ -1,0 +1,10 @@
+<p>
+    <button (click)="getGitHubUsers()">List GitHub Users</button>
+</p>
+    Users:
+    <p *ngIf="responseData">
+        {{responseData[0].login}}
+    </p>
+
+
+    <!-- CORS error -->
