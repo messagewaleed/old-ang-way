@@ -1,21 +1,30 @@
 
-<div>
-    <h1>{{profile.name}}</h1>
-    <h2>{{profile.designation}}</h2>
-    <h3>{{profile.skills}}</h3>
+<div class="profile-card">
+    <h1 class="profile-name">{{theProfile.name}}</h1>
+    <h2 class="profile-designation">{{theProfile.designation}}</h2>
+    <h3 class="profile-skills">{{theProfile.skills}}</h3>
     <button *ngIf="!isVisible" (click)="toggleContact()">SHOW</button>
     <button *ngIf="isVisible" (click)="toggleContact()">HIDE</button>
 <div *ngIf="isVisible">
-    <div *ngIf="profile.contact.length">
+    <div class="profile-contact" *ngIf="theProfile.contact.length">
         Contact:
-        <p *ngFor="let value of profile.contact">
+        <p *ngFor="let value of theProfile.contact">
             {{value}}
         </p>
     </div>
 </div>
 </div>
+<p>
+    Your name : <input type="text" [(ngModel)]="someValue">
+</p>
+<p>
+    {{someValue}}
+</p>
 
 <!-- *ngFor - directive
 *ngFor = "let item of items" -->
 
 <!-- *ngIf -->
+
+<!-- Two way data binding
+    - usually used with forms -->

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Profile } from './profile';
 
 @Component({
   selector: 'app-profile',
@@ -6,16 +7,34 @@ import { Component } from '@angular/core';
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent {
-  profile : any;
+
+  @Input('name') name !: string;
+
+  @Input('profile') theProfile!: Profile;
+
+  @Input('someValue') someValue !: string;
+
+  //profile : any;
 
   isVisible : boolean = false;
 
   constructor(){
-    this.profile = {
-      name: 'Shreya S',
-      designation : 'Senior Software Engineer',
-      skills: 'Java, Spring, Microservices',
-      contact : ['9989888888']
+    
+  }
+
+  ngOnInit(){ //Lifecycle hook method
+    // this.profile = {
+    //   name: this.name,
+    //   designation : 'Senior Software Engineer',
+    //   skills: 'Java, Spring, Microservices',
+    //   contact : ['9989888888']
+    // }
+
+    this.theProfile = {
+      name: this.theProfile.name,
+      designation : this.theProfile.designation,
+      skills: this.theProfile.skills,
+      contact : this.theProfile.contact
     }
   }
 
