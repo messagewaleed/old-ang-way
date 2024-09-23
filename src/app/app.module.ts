@@ -7,12 +7,18 @@ import { ProfileComponent } from './profile/profile.component';
 import { FormsModule } from '@angular/forms';
 import { RestcallComponent } from './restcall/restcall.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SettingsComponent } from './settings/settings.component';
+import { AboutComponent } from './about/about.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
-    RestcallComponent
+    RestcallComponent,
+    SettingsComponent,
+    AboutComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
