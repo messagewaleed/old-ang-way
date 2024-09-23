@@ -10,6 +10,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SettingsComponent } from './settings/settings.component';
 import { AboutComponent } from './about/about.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     RestcallComponent,
     SettingsComponent,
     AboutComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

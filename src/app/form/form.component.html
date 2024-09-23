@@ -1,0 +1,30 @@
+<h1>
+    User Registration
+</h1>
+<hr>
+    <div class="form-group">
+        <form #userForm="ngForm">
+        <input 
+        required
+        minlength="4"
+        pattern="[a-z]{4,8}"
+        type="text"
+        id="userName"
+        class="form-control"
+        name="userName"
+        ngModel
+        #userName="ngModel"
+        (change)="validateUserName(userName)"
+        >
+
+        <div class="alert alert-danger" *ngIf="userName.touched && !userName.valid">
+            <div *ngIf="userName.errors?.['required']">Please enter your username</div>
+            <div *ngIf="userName.errors?.['minlength']">Atleast 4 characters</div>
+            <div *ngIf="userName.errors?.['pattern']">Doesn't match the pattern</div>
+        </div>
+
+
+        <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-primary">REGISTER</button>
+        </form>
+    </div>
+
