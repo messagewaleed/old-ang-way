@@ -8,6 +8,7 @@ import { Profile } from './profile';
 })
 export class ProfileComponent {
 
+
   @Input('name') name !: string;
 
   @Input('profile') theProfile!: Profile;
@@ -42,6 +43,10 @@ export class ProfileComponent {
     // console.log("Button was clicked...");
     this.isVisible = !this.isVisible;
     
+  }
+
+  searchUserOnGitHub() {
+
   }
 
 }

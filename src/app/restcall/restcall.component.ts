@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class RestcallComponent {
 
+  userName : string = "";
+
   responseData !: any;
 
   constructor(private  httpClient : HttpClient){
@@ -26,4 +28,14 @@ export class RestcallComponent {
       this.responseData = response;
     });
   }
+
+  searchUserOnGitHub() {
+    this.httpClient.get("https://api.github.com/users/" + this.userName)
+    .subscribe((responseData) => {
+      this.responseData =  responseData;
+      console.log(this.responseData);
+      
+    })
+    }
+
 }

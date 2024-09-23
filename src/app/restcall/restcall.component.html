@@ -1,10 +1,15 @@
 <p>
-    <button (click)="getGitHubUsers()">List GitHub Users</button>
+    Your name : <input type="text" placeholder="github username" [(ngModel)]="userName">
+    <button (click)="searchUserOnGitHub()">Search User on GitHub</button>
 </p>
     Users:
-    <p *ngIf="responseData">
-        {{responseData[0].login}}
-    </p>
+    <div *ngIf="responseData">
+        <img src={{responseData.avatar_url}} alt="Profile image of the user">
+        <p>Name : {{responseData.name}}</p>
+        <p>Followers : {{responseData.followers}}</p>
+        <p>Location : {{responseData.location}}</p>
+
+    </div>
 
 
     <!-- CORS error -->
